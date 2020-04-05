@@ -9,4 +9,5 @@ Asynchronous Programming in Python
 - run `pip install -r requirements.text`
 
 ## run
-`python main.py`
+`python main.py [args]` example : `python main.py soccer covid`
+
