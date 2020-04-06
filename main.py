@@ -7,8 +7,8 @@ def main():
     print("-" * 20)
     print("fetching data for :", args)
     c = Client()
-    c.call_reddit(args)
-    c.run_forever()
+    fut = c.call_reddit(args)
+    c.complete_loop_now(fut)
     print("-" * 20)
 
 

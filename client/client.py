@@ -19,7 +19,8 @@ class Client:
 
     def call_reddit(self, topic: List):
         for item in topic:
-            asyncio.ensure_future(api_handler.get_reddit_top(item))
+            return asyncio.ensure_future(api_handler.get_reddit_top(item))
 
-    def run_forever(self):
-        api_handler.run_loop_forever()
+
+    def complete_loop_now(self, future):
+        api_handler.complete_loop(future)

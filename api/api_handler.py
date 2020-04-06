@@ -31,9 +31,10 @@ class ApiHandler:
         print('Fetched:', sub_reddit + '\n')
 
     def signal_handler(self, frame, signal):
+        print('loop should be stopped')
         self.loop.stop()
         self.client.close()
         sys.exit(0)
 
-    def run_loop_forever(self):
-        self.loop.run_forever()
+    def complete_loop(self, future):
+        self.loop.run_until_complete(future)
